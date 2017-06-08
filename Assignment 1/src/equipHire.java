@@ -56,10 +56,12 @@ class equipHire {
 		System.out.printf("DL No: %29s",cust_Dl);
 		System.out.printf("CC Number: %25s",cust_CCnum);
 		System.out.printf("CC expiry: %25s",cust_CCexp);
-		System.out.printf("");
-		System.out.printf("");
-		System.out.printf("");
-		System.out.printf("");
+		System.out.print("Equipment Hire Details");
+		System.out.print("----------------------");
+		System.out.printf("Equipment Description: %9s",equip_Type);
+		System.out.printf("Booking Length (Days): %9d",book_Length);
+		System.out.printf("Daily Hire Rate: %15f",day_Rate);
+		System.out.printf("Base Hire Charge: %14f",basic_Charge);
 		
 
 
