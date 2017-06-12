@@ -20,7 +20,8 @@ class equipHire {
 		String cust_CCexp;
 		int book_Length;
 		String equip_Code;
-		double day_Rate;
+		String equip_Name;
+		double day_Rate=null;
 		
 		// User input
 		System.out.print("Enter Customer Name: ");
@@ -40,7 +41,30 @@ class equipHire {
 		sc.nextLine();
 		System.out.print("Enter Equipment Code: ");
 		equip_Code = sc.nextLine();
-		// todo: determine equipment type and day hire rate from equip code
+		System.out.print("Equipment fully refuelled (Y/N)?");
+		String refueled = sc.nextLine();
+		
+		
+		//  determine equipment type and day hire rate from equip code
+		
+		switch(equip_Code){
+		    case"DML":
+		        equip_Name="Dingo Mini Loader";
+		        day_Rate=300;
+		        break;
+		    case"BSL":
+	            equip_Name="Bobcat Skid Steer Loader";
+	            day_Rate=400;
+	            break;
+		    case"KMX":
+	            equip_Name="Kubota 1.7T Mini Excavator";
+	            day_Rate=450;
+	            break;
+		    case"KLX":
+	            equip_Name="Kubota 5.5T Light Excavator";
+	            day_Rate=550;
+	            break;
+		}
 		
 		double basic_Charge=(book_Length*day_Rate);
 		
