@@ -107,8 +107,9 @@ class equipHire {
         if (refueled=="Y"){
             fuel_Charge=200;
         }
-        System.out.printf("Fuel Surcharge: %20.2f/r/n");
-        System.out.printf("Discounted Hire Charge: %12.2f/r/n");
+        fin_Charge=(fin_Charge+fuel_Charge);
+        System.out.printf("Fuel Surcharge: %20.2f/r/n",fuel_Charge);
+        System.out.printf("Discounted Hire Charge: %12.2f/r/n",fin_Charge);
 		
 		
 
