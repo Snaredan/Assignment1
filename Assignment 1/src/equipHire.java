@@ -21,7 +21,10 @@ class equipHire {
 		int book_Length;
 		String equip_Code;
 		String equip_Name;
-		double day_Rate=null;
+		double day_Rate=0;
+		double disc_Rate;
+		double fin_Charge;
+		double fuel_Charge=0;
 		
 		// User input
 		System.out.print("Enter Customer Name: ");
@@ -68,7 +71,19 @@ class equipHire {
 		
 		double basic_Charge=(book_Length*day_Rate);
 		
-		// todo: determine discount (if any) from Booking length
+		// determine discount (if any) from Booking length
+		if (book_Length < 5){
+		    disc_Rate=0;
+		}
+		else if (book_Length > 14){
+		    disc_Rate=0.3;
+		}
+		else{
+		    disc_Rate=0.1;
+		}
+		double discount=(basic_Charge*disc_Rate);
+		discount=(discount*-1);
+		
 		
 		// invoice output
 		
@@ -82,10 +97,18 @@ class equipHire {
 		System.out.printf("CC expiry: %25s\r\n",cust_CCexp);
 		System.out.print("Equipment Hire Details\r\n");
 		System.out.print("----------------------\r\n");
-		System.out.printf("Equipment Description: %9s\r\n",equip_Code);
+		System.out.printf("Equipment Description: %9s\r\n",equip_Name);
 		System.out.printf("Booking Length (Days): %9d\r\n",book_Length);
-		System.out.printf("Daily Hire Rate: %15f\r\n",day_Rate);
-		System.out.printf("Base Hire Charge: %14f\r\n",basic_Charge);
+		System.out.printf("Daily Hire Rate: %15.2f\r\n",day_Rate);
+		System.out.printf("Base Hire Charge: %14.2f\r\n",basic_Charge);
+		System.out.printf("Discount: %26.2f\r\n",discount);
+		// work out final charge from basic charge, discount and refueling fee
+        fin_Charge=(basic_Charge+discount);
+        if (refueled=="Y"){
+            fuel_Charge=200;
+        }
+        System.out.printf("Fuel Surcharge: %20.2f/r/n");
+        System.out.printf("Discounted Hire Charge: %12.2f/r/n");
 		
 		
 
