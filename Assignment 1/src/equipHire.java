@@ -20,7 +20,7 @@ class equipHire {
 		String cust_CCexp;
 		int book_Length;
 		String equip_Code;
-		String equip_Name;
+		String equip_Name="Invalid Code Entered";
 		double day_Rate=0;
 		double disc_Rate;
 		double fin_Charge;
@@ -89,27 +89,27 @@ class equipHire {
 		
 		System.out.print("Customer Details\r\n");
 		System.out.print("----------------\r\n");
-		System.out.printf("Name: %30s\r\n",cust_Name);
-		System.out.printf("Address: %27s\r\n",cust_Address);
-		System.out.printf("Phone Number: %22s\r\n",cust_Phone);
-		System.out.printf("DL No: %29s\r\n",cust_Dl);
-		System.out.printf("CC Number: %25s\r\n",cust_CCnum);
-		System.out.printf("CC expiry: %25s\r\n",cust_CCexp);
+		System.out.printf("Name: %40s\r\n",cust_Name);
+		System.out.printf("Address: %37s\r\n",cust_Address);
+		System.out.printf("Phone Number: %32s\r\n",cust_Phone);
+		System.out.printf("DL No: %39s\r\n",cust_Dl);
+		System.out.printf("CC Number: %35s\r\n",cust_CCnum);
+		System.out.printf("CC expiry: %35s\r\n",cust_CCexp);
 		System.out.print("Equipment Hire Details\r\n");
 		System.out.print("----------------------\r\n");
-		System.out.printf("Equipment Description: %9s\r\n",equip_Name);
-		System.out.printf("Booking Length (Days): %9d\r\n",book_Length);
-		System.out.printf("Daily Hire Rate: %15.2f\r\n",day_Rate);
-		System.out.printf("Base Hire Charge: %14.2f\r\n",basic_Charge);
-		System.out.printf("Discount: %26.2f\r\n",discount);
+		System.out.printf("Equipment Description: %19s\r\n",equip_Name);
+		System.out.printf("Booking Length (Days): %19d\r\n",book_Length);
+		System.out.printf("Daily Hire Rate: %25.2f\r\n",day_Rate);
+		System.out.printf("Base Hire Charge: %24.2f\r\n",basic_Charge);
+		System.out.printf("Discount: %36.2f\r\n",discount);
 		// work out final charge from basic charge, discount and refueling fee
         fin_Charge=(basic_Charge+discount);
         if (refueled=="Y"){
             fuel_Charge=200;
         }
         fin_Charge=(fin_Charge+fuel_Charge);
-        System.out.printf("Fuel Surcharge: %20.2f/r/n",fuel_Charge);
-        System.out.printf("Discounted Hire Charge: %12.2f/r/n",fin_Charge);
+        System.out.printf("Fuel Surcharge: %30.2f/r/n",fuel_Charge);
+        System.out.printf("Discounted Hire Charge: %22.2f/r/n",fin_Charge);
 		
 		
 
