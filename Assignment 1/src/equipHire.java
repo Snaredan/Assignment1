@@ -104,7 +104,7 @@ class equipHire {
 		System.out.printf("Discount: %46.2f\r\n",discount);
 		// work out final charge from basic charge, discount and refueling fee
         fin_Charge=(basic_Charge+discount);
-        if (refueled=="Y"){
+        if (refueled.equals("N")){
             fuel_Charge=200;
         }
         fin_Charge=(fin_Charge+fuel_Charge);
